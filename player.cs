@@ -83,6 +83,22 @@ namespace magic_game {
             display (target.played_creatures);
         }
 
+        public void displayOptions(player target) {
+            Console.WriteLine("Display:\n1. Your cards\n2. {0}'s cards\n3. Nevermind.\n");
+            string input = Console.ReadLine();
+            if (input == "1") {
+                display(played_lands);
+                display(played_creatures);
+                display(hand);
+            } else if (input == "2") {
+                display(target);
+            } else if (input == "3") {
+                continue;
+            } else {
+                Console.WriteLine("Invalid input. Please try again.\n");
+            }
+        }
+
         public void attack (Player target) {
             this.display (played_creatures, "available");
             System.Console.WriteLine ("Which creature would you like to attack with?");
